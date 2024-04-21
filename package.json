@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "build:use-event": "yarn workspace @util-hooks/use-event build",
-    "build:all": "yarn build:use-event"
+    "build:all": "yarn build:use-event",
+    "publish:use-event": "yarn workspace @util-hooks/use-event publish --access public" 
   },
   "devDependencies": {
     "tsup": "^8.0.2",
