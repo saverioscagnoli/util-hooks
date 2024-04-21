@@ -1,0 +1,19 @@
+{
+  "name": "@util-hooks/use-hotkey",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25"
+  }
+}

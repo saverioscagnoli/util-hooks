@@ -1,0 +1,16 @@
+{
+  "name": "util-hooks",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:use-event": "yarn workspace @util-hooks/use-event build",
+    "build:all": "yarn build:use-event"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
+}

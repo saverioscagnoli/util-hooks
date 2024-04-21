@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "useDefineForClassFields": true,
+    "skipLibCheck": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "lib": ["dom", "es2022"],
+    "baseUrl": "."
+  },
+  "exclude": ["node_modules", "dist"]
+}
