@@ -33,7 +33,7 @@ const App = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   // This will trigger any time the orange div is clicked.
-  useEvent(wrapperRef.current, "click", evt => {
+  useEvent(wrapperRef, "click", evt => {
     evt.preventDefault();
     console.log("clicked on the orange div!");
   });
