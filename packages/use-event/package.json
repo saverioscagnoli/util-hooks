@@ -1,6 +1,6 @@
 {
   "name": "@util-hooks/use-event",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -10,6 +10,14 @@
     "url": "https://github.com/saverioscagnoli/util-hooks/tree/master/packages/use-event"
   },
   "homepage": "https://github.com/saverioscagnoli/util-hooks/tree/master/packages/use-event#readme",
+  "keywords": [
+    "react",
+    "hooks",
+    "event",
+    "event-listener",
+    "document",
+    "window"
+  ],
   "scripts": {
     "lint": "tsc",
     "build": "yarn lint && tsup src/index.ts --format cjs,esm --dts --minify"
