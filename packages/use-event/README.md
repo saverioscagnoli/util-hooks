@@ -7,7 +7,6 @@ With this hook, you can easily access events on any desired target in the DOM, a
 You can pass any target you want, but in case you don't, the default target is the `document` element.
 
 ```tsx
-import { useRef } from "react";
 import { useEvent } from "@util-hooks/use-event";
 
 const App = () => {

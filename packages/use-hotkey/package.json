@@ -5,8 +5,17 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saverioscagnoli/util-hooks/tree/master/packages/use-hotkey"
+  },
+  "homepage": "https://github.com/saverioscagnoli/util-hooks/tree/master/packages/use-hotkey#readme",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --minify"
+    "lint": "tsc",
+    "build": "yarn lint && tsup src/index.ts --format cjs,esm --dts --minify"
+  },
+  "dependencies": {
+    "@util-hooks/use-event": "@latest"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

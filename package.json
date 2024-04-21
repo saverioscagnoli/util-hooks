@@ -5,10 +5,17 @@
   "workspaces": [
     "packages/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saverioscagnoli/util-hooks.git"
+  },
   "scripts": {
     "build:use-event": "yarn workspace @util-hooks/use-event build",
-    "build:all": "yarn build:use-event",
-    "publish:use-event": "yarn workspace @util-hooks/use-event publish --access public" 
+    "build:use-hotkey": "yarn workspace @util-hooks/use-hotkey build",
+    "build:all": "yarn build:use-event && yarn build:use-hotkey",
+    "publish:use-event": "yarn workspace @util-hooks/use-event publish --access public",
+    "publish:use-hotkey": "yarn workspace @util-hooks/use-hotkey publish --access public",
+    "publish:all": "yarn build:all && yarn publish:use-event && yarn publish:use-hotkey"
   },
   "devDependencies": {
     "tsup": "^8.0.2",
