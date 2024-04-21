@@ -1,6 +1,6 @@
 {
   "name": "@util-hooks/use-hotkey",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -10,6 +10,14 @@
     "url": "https://github.com/saverioscagnoli/util-hooks/tree/master/packages/use-hotkey"
   },
   "homepage": "https://github.com/saverioscagnoli/util-hooks/tree/master/packages/use-hotkey#readme",
+  "keywords": [
+    "hotkey",
+    "react",
+    "hooks",
+    "keyboard",
+    "shortcut",
+    "use-hotkey"
+  ],
   "scripts": {
     "lint": "tsc",
     "build": "yarn lint && tsup src/index.ts --format cjs,esm --dts --minify"
