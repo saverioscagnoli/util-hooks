@@ -94,6 +94,18 @@ function useEvent<
           );
         }
       };
+    } else {
+      (target as Document | Window | HTMLElement).addEventListener(
+        name as string,
+        cb as EventListener
+      );
+
+      return () => {
+        (target as Document | Window | HTMLElement).removeEventListener(
+          name as string,
+          cb as EventListener
+        );
+      };
     }
   }, [target, ...dependencies]);
 
