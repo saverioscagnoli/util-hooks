@@ -1,14 +1,17 @@
 {
-  "name": "@util-hooks/use-event",
-  "version": "1.0.8",
+  "name": "@util-hooks/use-tauri-event",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "license": "MIT",
-  "repository": "https://github.com/saverioscagnoli/util-hooks/tree/master/packages/use-event",
-  "homepage": "https://github.com/saverioscagnoli/util-hooks/tree/master/packages/use-event#readme",
+  "repository": "https://github.com/saverioscagnoli/util-hooks/tree/master/packages/use-tauri-event",
+  "homepage": "https://github.com/saverioscagnoli/util-hooks/tree/master/packages/use-tauri-event#readme",
   "keywords": [
     "react",
+    "tauri",
+    "desktop",
+    "app",
     "hooks",
     "event",
     "event-listener",
@@ -20,6 +23,7 @@
     "build": "yarn lint && tsup src/index.ts --format cjs,esm --dts --minify"
   },
   "peerDependencies": {
+    "@tauri-apps/api": ">=1.0.0",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
