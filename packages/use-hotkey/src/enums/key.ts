@@ -10,7 +10,7 @@ enum Key {
   PageDown = "pagedown",
   End = "end",
   Home = "home",
-  ArrowLeft = "arrowheft",
+  ArrowLeft = "arrowleft",
   ArrowUp = "arrowup",
   ArrowRight = "arrowright",
   ArrowDown = "arrowdown",

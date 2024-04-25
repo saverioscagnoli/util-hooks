@@ -1,5 +1,6 @@
 import { DependencyList } from "react";
 import { Modifier, Key } from "./enums";
+// @ts-ignore
 import { Target, useEvent } from "@util-hooks/use-event";
 
 function deburr(str: string) {
@@ -40,11 +41,13 @@ function useHotkey<U extends Element, T extends Target<U>>(
         depsOrCb as DependencyList
       ];
 
-  const target = Array.isArray(modsOrTarget) ? document : modsOrTarget;
+  const target = Array.isArray(modsOrTarget) ? 
+  document : modsOrTarget;
 
   useEvent(
     target,
     "keydown",
+    // @ts-ignore
     e => {
       if (mods.every(mod => e[mod]) && deburr(e.key.toLowerCase()) === key) {
         cb(e);
