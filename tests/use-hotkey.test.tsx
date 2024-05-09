@@ -7,7 +7,7 @@ describe("useHotkey", () => {
   it("should be fired when the hotkey is pressed", () => {
     const mockFn = vitest.fn();
 
-    renderHook(() => useHotkey([Modifier.Ctrl], Key.KeyA, mockFn));
+    renderHook(() => useHotkey([Modifier.Ctrl], Key.A, mockFn));
 
     act(() => {
       const hotkey = new KeyboardEvent("keydown", {
@@ -46,7 +46,7 @@ describe("useHotkey", () => {
   it("should be fired when the hotkey is pressed without modifiers", () => {
     const mockFn = vitest.fn();
 
-    renderHook(() => useHotkey(Key.KeyA, mockFn));
+    renderHook(() => useHotkey(Key.A, mockFn));
 
     act(() => {
       const hotkey = new KeyboardEvent("keydown", {
@@ -63,11 +63,11 @@ describe("useHotkey", () => {
     const mockFn = vitest.fn();
 
     renderHook(() => {
-      useHotkey([Modifier.Ctrl], Key.KeyA, mockFn);
-      useHotkey([Modifier.Ctrl, Modifier.Shift], Key.KeyA, mockFn);
+      useHotkey([Modifier.Ctrl], Key.A, mockFn);
+      useHotkey([Modifier.Ctrl, Modifier.Shift], Key.A, mockFn);
       useHotkey(
         [Modifier.Ctrl, Modifier.Shift, Modifier.Alt],
-        Key.KeyA,
+        Key.A,
         mockFn
       );
     });
@@ -89,11 +89,11 @@ describe("useHotkey", () => {
     const mockFn = vitest.fn();
 
     renderHook(() => {
-      useHotkey([Modifier.Ctrl], Key.KeyA, mockFn);
-      useHotkey([Modifier.Ctrl, Modifier.Shift], Key.KeyA, mockFn);
+      useHotkey([Modifier.Ctrl], Key.A, mockFn);
+      useHotkey([Modifier.Ctrl, Modifier.Shift], Key.A, mockFn);
       useHotkey(
         [Modifier.Ctrl, Modifier.Shift, Modifier.Alt],
-        Key.KeyA,
+        Key.A,
         mockFn
       );
     });
@@ -123,8 +123,8 @@ describe("useHotkey", () => {
     const mockFn = vitest.fn();
 
     renderHook(() => {
-      useHotkey([Modifier.Ctrl], Key.KeyA, mockFn);
-      useHotkey([Modifier.Ctrl], Key.KeyA, mockFn);
+      useHotkey([Modifier.Ctrl], Key.A, mockFn);
+      useHotkey([Modifier.Ctrl], Key.A, mockFn);
     });
 
     act(() => {
@@ -142,7 +142,7 @@ describe("useHotkey", () => {
   it("should handle accented characters", () => {
     const mockFn = vitest.fn();
 
-    renderHook(() => useHotkey(Key.KeyA, mockFn));
+    renderHook(() => useHotkey(Key.A, mockFn));
 
     act(() => {
       const hotkey = new KeyboardEvent("keydown", {
@@ -158,7 +158,7 @@ describe("useHotkey", () => {
   it("should handle uppercase characters", () => {
     const mockFn = vitest.fn();
 
-    renderHook(() => useHotkey(Key.KeyA, mockFn));
+    renderHook(() => useHotkey(Key.A, mockFn));
 
     act(() => {
       const hotkey = new KeyboardEvent("keydown", {
