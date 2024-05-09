@@ -1,6 +1,6 @@
 {
   "name": "@util-hooks/use-hotkey",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "lint": "tsc",
-    "test": "vitest --root ../../",
+    "test": "yarn build && vitest --root ../../",
     "build": "yarn lint && tsup src/index.ts --format cjs,esm --dts --minify"
   },
   "dependencies": {
