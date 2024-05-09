@@ -267,11 +267,6 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.16.0.tgz#0db109f8e1a604da9c9a86deebd84d8d040d6671"
   integrity sha512-tkfxXt+7c3Ecgn7ln9NJPdBM+QKwQdmFFpgAP+FYhAuRS5y3tY8xeza82gFjbPpytkHmaQnVdMtuzbToCz2tuw==
 
-"@tauri-apps/api@^1.5.3":
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/@tauri-apps/api/-/api-1.5.3.tgz#f7b362b1f30aadb0a8bbeb7ae111755c0ed33d73"
-  integrity sha512-zxnDjHHKjOsrIzZm6nO5Xapb/BxqUq1tc7cGkFXsFkGTsSWgCPH1D8mm0XS9weJY2OaR73I3k3S+b7eSzJDfqA==
-
 "@types/estree@1.0.5":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.5.tgz#a6ce3e556e00fd9895dd872dd172ad0d4bd687f4"
@@ -296,11 +291,6 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
-
-"@util-hooks/use-event@@latest":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@util-hooks/use-event/-/use-event-1.0.6.tgz#aeef176e358b76074fde3d157861fc494634f9ce"
-  integrity sha512-MZC2d3CPbumxVgas3MuUl2jPRV4Lj/UDUARpO6NDkMX3R+Prx00+Q/QQN8xuu4YNBBIAPR7EqY3rFta7OtzBhQ==
 
 ansi-regex@^5.0.1:
   version "5.0.1"

@@ -23,7 +23,7 @@
     "build": "yarn lint && tsup src/index.ts --format cjs,esm --dts --minify"
   },
   "dependencies": {
-    "@util-hooks/use-event": "@latest"
+    "@util-hooks/use-event": "^1.0.8"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
