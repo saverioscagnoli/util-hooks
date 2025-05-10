@@ -1,38 +1,17 @@
 {
   "name": "util-hooks",
-  "license": "MIT",
   "private": true,
+  "repository": "https://github.com/saverioscagnoli/util-hooks",
+  "author": "Saverio Scagnoli <95577971+saverioscagnoli@users.noreply.github.com>",
+  "license": "MIT",
   "workspaces": [
-    "packages/*"
+    "use-event"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/saverioscagnoli/util-hooks.git"
-  },
   "scripts": {
-    "test:use-event": "yarn workspace @util-hooks/use-event test",
-    "test:use-hotkey": "yarn workspace @util-hooks/use-hotkey test",
-    "test:use-tauri-event": "yarn workspace @util-hooks/use-tauri-event test",
-    "test:all": "yarn test:use-event && yarn test:use-hotkey && yarn test:use-tauri-event",
-    "build:use-event": "yarn workspace @util-hooks/use-event build",
-    "build:use-hotkey": "yarn workspace @util-hooks/use-hotkey build",
-    "build:use-tauri-event": "yarn workspace @util-hooks/use-tauri-event build",
-    "build:all": "yarn build:use-event && yarn build:use-hotkey && yarn buiild:use-tauri-event",
-    "publish:use-event": "yarn workspace @util-hooks/use-event publish --access public",
-    "publish:use-hotkey": "yarn workspace @util-hooks/use-hotkey publish --access public",
-    "publish:use-tauri-event": "yarn workspace @util-hooks/use-tauri-event publish --access public",
-    "publish:all": "yarn build:all && yarn publish:use-event && yarn publish:use-hotkey && yarn publish:use-tauri-event"
+    "build:use-event": "yarn workspace @util-hooks/use-event build"
   },
   "devDependencies": {
-    "@testing-library/react": "^15.0.7",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.0",
-    "jsdom": "^24.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.11",
-    "vitest": "^1.6.0"
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
   }
 }

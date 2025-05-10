@@ -1,11 +1,8 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: [
-    "packages/use-event-react/src/index.ts",
-    "packages/use-event-solid/src/index.ts"
-  ],
+  entry: ["use-event/src/index.ts"],
+  dts: true,
   clean: true,
   minify: true,
-  sourcemap: true
 });
