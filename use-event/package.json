@@ -6,7 +6,10 @@
   "license": "MIT",
   "author": "Saverio Scagnoli <95577971+saverioscagnoli@users.noreply.github.com>",
   "description": "A React hook to add and remove event listeners without the boilerplate.",
-  "repository": "https://github.com/saverioscagnoli/util-hooks/tree/master/use-event",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saverioscagnoli/util-hooks.git#master"
+  },
   "homepage": "https://github.com/saverioscagnoli/util-hooks/tree/master/use-event#readme",
   "keywords": [
     "react",
