@@ -75,7 +75,7 @@ function useEvent<
       name as string,
       callback as EventListener,
       {
-        signal,
+        signal
       }
     );
 
