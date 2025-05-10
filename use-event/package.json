@@ -1,9 +1,21 @@
 {
   "name": "@util-hooks/use-event",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
+  "author": "Saverio Scagnoli <95577971+saverioscagnoli@users.noreply.github.com>",
+  "description": "A React hook to add and remove event listeners without the boilerplate.",
+  "repository": "https://github.com/saverioscagnoli/util-hooks/tree/master/use-event",
+  "homepage": "https://github.com/saverioscagnoli/util-hooks/tree/master/use-event#readme",
+  "keywords": [
+    "react",
+    "hooks",
+    "event",
+    "event-listener",
+    "document",
+    "window"
+  ],
   "scripts": {
     "lint": "tsc",
     "build": "yarn lint && tsup src/index.ts"
