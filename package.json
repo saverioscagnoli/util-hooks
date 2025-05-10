@@ -1,7 +1,10 @@
 {
   "name": "util-hooks",
   "private": true,
-  "repository": "https://github.com/saverioscagnoli/util-hooks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saverioscagnoli/util-hooks.git"
+  },
   "author": "Saverio Scagnoli <95577971+saverioscagnoli@users.noreply.github.com>",
   "license": "MIT",
   "workspaces": [
@@ -13,5 +16,6 @@
   "devDependencies": {
     "tsup": "^8.4.0",
     "typescript": "^5.8.3"
-  }
+  },
+  "version": ""
 }
