@@ -8,7 +8,8 @@
   "author": "Saverio Scagnoli <95577971+saverioscagnoli@users.noreply.github.com>",
   "license": "MIT",
   "workspaces": [
-    "use-event"
+    "use-event",
+    "use-hotkey"
   ],
   "scripts": {
     "build:use-event": "yarn workspace @util-hooks/use-event build"
