@@ -1,6 +1,6 @@
 {
   "name": "@util-hooks/use-hotkey",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "build": "yarn lint && tsup src/index.ts"
   },
   "dependencies": {
-    "@util-hooks/use-event": "workspace:*"
+    "@util-hooks/use-event": "*"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
