@@ -1,0 +1,37 @@
+{
+  "name": "@util-hooks/use-hotkey",
+  "version": "3.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "author": "Saverio Scagnoli <95577971+saverioscagnoli@users.noreply.github.com>",
+  "description": "A React hook to simplify the use of keyboard shortcuts.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saverioscagnoli/util-hooks.git#master"
+  },
+  "homepage": "https://github.com/saverioscagnoli/util-hooks/tree/master/use-hotkey#readme",
+  "keywords": [
+    "hotkey",
+    "react",
+    "hooks",
+    "keyboard",
+    "shortcut",
+    "use-hotkey"
+  ],
+  "scripts": {
+    "lint": "tsc",
+    "build": "yarn lint && tsup src/index.ts"
+  },
+  "dependencies": {
+    "@util-hooks/use-event": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": ">=16.8.0",
+    "@types/react-dom": ">=16.8.0"
+  }
+}
