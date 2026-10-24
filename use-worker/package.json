@@ -1,0 +1,44 @@
+{
+  "name": "@util-hooks/use-worker",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "license": "MIT",
+  "author": "Saverio Scagnoli <95577971+saverioscagnoli@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saverioscagnoli/util-hooks.git#master"
+  },
+  "homepage": "https://github.com/saverioscagnoli/util-hooks/tree/master/use-worker",
+  "keywords": [
+    "react",
+    "hook",
+    "web worker",
+    "worker"
+  ],
+  "scripts": {
+    "lint": "tsc --noEmit",
+    "build": "rm -rf dist && tsc && cp dist/index.d.ts dist/index.d.cts && rolldown -c ../rolldown.config.ts"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": ">=16.8.0",
+    "@types/react-dom": ">=16.8.0"
+  }
+}

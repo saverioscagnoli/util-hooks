@@ -3,6 +3,7 @@
     "target": "es2022",
     "moduleResolution": "Bundler",
     "module": "ESNext",
+    "types": ["node"],
     "useDefineForClassFields": true,
     "skipLibCheck": true,
     "moduleDetection": "force",
@@ -11,7 +12,6 @@
     "strict": true,
     "jsx": "react-jsx",
     "lib": ["dom", "es2022"],
-    "baseUrl": "."
   },
   "exclude": ["node_modules", "dist"]
 }

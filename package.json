@@ -9,14 +9,19 @@
   "license": "MIT",
   "workspaces": [
     "use-event",
-    "use-hotkey"
+    "use-hotkey",
+    "use-worker"
   ],
   "scripts": {
-    "build:use-event": "yarn workspace @util-hooks/use-event build"
+    "build": "yarn build:use-event && yarn build:use-hotkey && yarn build:use-worker",
+    "build:use-event": "yarn workspace @util-hooks/use-event build",
+    "build:use-hotkey": "yarn workspace @util-hooks/use-hotkey build",
+    "build:use-worker": "yarn workspace @util-hooks/use-worker build"
   },
   "devDependencies": {
-    "tsup": "^8.4.0",
-    "typescript": "^5.8.3"
+    "@types/node": "^26.6.5",
+    "rolldown": "^1.2.15",
+    "typescript": "^7.0.2"
   },
   "version": ""
 }

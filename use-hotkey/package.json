@@ -1,8 +1,21 @@
 {
   "name": "@util-hooks/use-hotkey",
   "version": "3.0.1",
-  "main": "dist/index.js",
+  "type": "module",
+  "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
   "license": "MIT",
   "author": "Saverio Scagnoli <95577971+saverioscagnoli@users.noreply.github.com>",
   "description": "A React hook to simplify the use of keyboard shortcuts.",
@@ -20,8 +33,8 @@
     "use-hotkey"
   ],
   "scripts": {
-    "lint": "tsc",
-    "build": "yarn lint && tsup src/index.ts"
+    "lint": "tsc --noEmit",
+    "build": "rm -rf dist && tsc && cp dist/index.d.ts dist/index.d.cts && rolldown -c ../rolldown.config.ts"
   },
   "dependencies": {
     "@util-hooks/use-event": "*"
