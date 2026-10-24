@@ -16,7 +16,10 @@
     "build": "yarn build:use-event && yarn build:use-hotkey && yarn build:use-worker",
     "build:use-event": "yarn workspace @util-hooks/use-event build",
     "build:use-hotkey": "yarn workspace @util-hooks/use-hotkey build",
-    "build:use-worker": "yarn workspace @util-hooks/use-worker build"
+    "build:use-worker": "yarn workspace @util-hooks/use-worker build",
+    "publish:use-event": "npm publish -w use-event --registry=https://registry.npmjs.org",
+    "publish:use-hotkey": "yarn build:use-event && npm publish -w use-hotkey --registry=https://registry.npmjs.org",
+    "publish:use-worker": "npm publish -w use-worker --registry=https://registry.npmjs.org"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

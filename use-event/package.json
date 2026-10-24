@@ -1,6 +1,6 @@
 {
   "name": "@util-hooks/use-event",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "type": "module",
   "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
@@ -34,7 +34,8 @@
   ],
   "scripts": {
     "lint": "tsc --noEmit",
-    "build": "rm -rf dist && tsc && cp dist/index.d.ts dist/index.d.cts && rolldown -c ../rolldown.config.ts"
+    "build": "rm -rf dist && tsc && cp dist/index.d.ts dist/index.d.cts && rolldown -c ../rolldown.config.ts",
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

@@ -31,7 +31,8 @@
   ],
   "scripts": {
     "lint": "tsc --noEmit",
-    "build": "rm -rf dist && tsc && cp dist/index.d.ts dist/index.d.cts && rolldown -c ../rolldown.config.ts"
+    "build": "rm -rf dist && tsc && cp dist/index.d.ts dist/index.d.cts && rolldown -c ../rolldown.config.ts",
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
