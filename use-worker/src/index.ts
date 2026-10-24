@@ -1,11 +1,20 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { WorkerRequest, WorkerResponse } from "./worker-types";
 
-type Pending<R> = { resolve: (v: R) => void; reject: (e: unknown) => void };
+type Pending<R, P> = {
+  resolve: (v: R) => void;
+  reject: (e: unknown) => void;
+  onProgress?: (value: P) => void;
+};
 
-function useWorker<T, R>(createWorker: () => Worker) {
+type RunOptions<P> = {
+  transfer?: Transferable[];
+  onProgress?: (value: P) => void;
+};
+
+function useWorker<T, R, P = unknown>(createWorker: () => Worker) {
   const workerRef = useRef<Worker | null>(null);
-  const pending = useRef(new Map<number, Pending<R>>());
+  const pending = useRef(new Map<number, Pending<R, P>>());
   const nextId = useRef(0);
   const factory = useRef(createWorker);
   const [running, setRunning] = useState(0);
@@ -27,6 +36,11 @@ function useWorker<T, R>(createWorker: () => Worker) {
     worker.onmessage = (e: MessageEvent<WorkerResponse<R>>) => {
       let p = map.get(e.data.id);
       if (!p) return;
+
+      if (e.data.progress !== undefined) {
+        p.onProgress?.(e.data.progress as P);
+        return;
+      }
 
       map.delete(e.data.id);
       setRunning(n => n - 1);
@@ -58,12 +72,12 @@ function useWorker<T, R>(createWorker: () => Worker) {
   );
 
   const run = useCallback(
-    (payload: T, transfer: Transferable[] = []): Promise<R> =>
+    (payload: T, { transfer = [], onProgress }: RunOptions<P> = {}): Promise<R> =>
       new Promise<R>((resolve, reject) => {
         let id = nextId.current++;
         let msg: WorkerRequest<T> = { id, payload };
 
-        pending.current.set(id, { resolve, reject });
+        pending.current.set(id, { resolve, reject, onProgress });
         setRunning(n => n + 1);
 
         try {
@@ -81,4 +95,5 @@ function useWorker<T, R>(createWorker: () => Worker) {
 }
 
 export { useWorker };
+export type { RunOptions };
 export * from "./worker-types";

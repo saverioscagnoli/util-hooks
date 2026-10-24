@@ -7,6 +7,7 @@ Moving work off the main thread usually means wiring up `postMessage`, matching 
 ## Features
 
 - Promise-based `run` function, with a `busy` flag for pending tasks
+- Progress updates from the worker while a task is running
 - Concurrent calls are matched to their own responses
 - Errors thrown in the worker reject the matching promise
 - Worker is created lazily on the first `run` and terminated on unmount
@@ -92,8 +93,65 @@ const { run } = useWorker<ArrayBuffer, number>(createWorker);
 const buffer = new ArrayBuffer(1024 * 1024);
 
 // `buffer` is moved to the worker and becomes unusable here
-await run(buffer, [buffer]);
+await run(buffer, { transfer: [buffer] });
 ```
+
+With progress updates, for long tasks. The worker calls `progress` as often as it wants, and every value is passed to the `onProgress` callback of the matching `run` call:
+
+```ts
+// sum.worker.ts
+import { expose } from "@util-hooks/use-worker/worker";
+
+expose<number[], number, number>((nums, { progress }) => {
+  let total = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    total += nums[i];
+
+    // Report every 100k items: posting on each iteration would flood
+    // the main thread with messages and re-renders.
+    if (i % 100_000 === 0) progress(i / nums.length);
+  }
+
+  return total;
+});
+```
+
+```tsx
+import { useState } from "react";
+import { useWorker } from "@util-hooks/use-worker";
+
+function App() {
+  const [progress, setProgress] = useState(0);
+
+  // The third generic is the progress value type.
+  const { run, busy } = useWorker<number[], number, number>(
+    () =>
+      new Worker(new URL("./sum.worker.ts", import.meta.url), {
+        type: "module"
+      })
+  );
+
+  const onClick = async () => {
+    const nums = Array.from({ length: 1e7 }, (_, i) => i);
+
+    setProgress(0);
+    await run(nums, { onProgress: setProgress });
+  };
+
+  return (
+    <div>
+      <button onClick={onClick} disabled={busy}>
+        Start
+      </button>
+      {busy && <progress value={progress} max={1} />}
+    </div>
+  );
+}
+```
+
+> [!NOTE]
+> `undefined` can't be used as a progress value: messages with an `undefined` progress are treated as the final result.
 
 `expose` lives in its own `@util-hooks/use-worker/worker` entry, so React never ends up in the worker bundle.
 
