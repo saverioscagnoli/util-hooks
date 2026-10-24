@@ -8,8 +8,13 @@ const deps = [
   ...Object.keys(pkg.peerDependencies ?? {})
 ];
 
+// One entry per subpath export: "." -> src/index.ts, "./worker" -> src/worker.ts
+const input = Object.keys(pkg.exports).map(key =>
+  key === "." ? "src/index.ts" : `src/${key.slice(2)}.ts`
+);
+
 export default defineConfig({
-  input: "src/index.ts",
+  input,
   external: id => deps.some(dep => id === dep || id.startsWith(`${dep}/`)),
   platform: "neutral",
   output: [

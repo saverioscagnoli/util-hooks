@@ -14,6 +14,16 @@
         "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
       }
+    },
+    "./worker": {
+      "import": {
+        "types": "./dist/worker.d.ts",
+        "default": "./dist/worker.js"
+      },
+      "require": {
+        "types": "./dist/worker.d.cts",
+        "default": "./dist/worker.cjs"
+      }
     }
   },
   "license": "MIT",
@@ -31,7 +41,7 @@
   ],
   "scripts": {
     "lint": "tsc --noEmit",
-    "build": "rm -rf dist && tsc && cp dist/index.d.ts dist/index.d.cts && rolldown -c ../rolldown.config.ts",
+    "build": "rm -rf dist && tsc && cp dist/index.d.ts dist/index.d.cts && cp dist/worker.d.ts dist/worker.d.cts && rolldown -c ../rolldown.config.ts",
     "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
