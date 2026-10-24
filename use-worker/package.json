@@ -27,6 +27,9 @@
     }
   },
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Saverio Scagnoli <95577971+saverioscagnoli@users.noreply.github.com>",
   "repository": {
     "type": "git",
